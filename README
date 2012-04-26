@@ -1,0 +1,9 @@
+Usage
+  bin/twname yaroslavick_lazor 2 5 yl ylzr slav slavic sl
+
+You should suply valid arguments 
+* All characters you want in your twitter name - alphanumerics only
+* Min number of characers in your twitter name
+* Max number of characers in your twitter name
+  * -1 - means all chars in name
+* names you like the name generator to follow, will be checked first
