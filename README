@@ -1,9 +1,61 @@
-Usage
-  bin/twname yaroslavick_lazor 2 5 yl ylzr slav slavic sl
+twname is a utility to find short twitter names based on the set of letters.
+Mostly the set of letters would beyour name or your nick. Or both.
+See below on the good tip on how to compose the name.
 
-You should suply valid arguments 
+= Usage
+  bin/twname yaroslavick_lazor_ 2 5 yl ylzr slav slavic sl
+
+You should suply valid arguments.
 * All characters you want in your twitter name - alphanumerics only
 * Min number of characers in your twitter name
 * Max number of characers in your twitter name
   * -1 - means all chars in name
 * names you like the name generator to follow, will be checked first
+
+
+= Set of letters for twitter account - or how to compose your name
+  For ex - it so happened - that i have to names : 
+    Yaroslav and Slavik (which comes from Yaroslav).
+      Slavik can also be written as slavic
+
+  So both combines - they become yaroslavick
+
+  Also it's a good idea to put underscores in the name.
+  You want to put them in the place you want them to be
+
+
+= How is name generated
+
+A binary mask is used to generate the name.
+Basically at each step at a time each char of the name is either used or not.
+
+  yaroslavick_lazor_
+  100000000000000000
+  =
+  y
+
+
+  yaroslavick_lazor_
+  010000000000000000
+  =
+  a
+  
+  yaroslavick_lazor_
+  110000000000000000
+  =
+  ya
+  
+  ...
+  
+  yaroslavick_lazor_
+  100001000001000001
+  =
+  yl_
+
+
+= How is name prioritized
+The names are prioritized using :
+- score on all of your favorite short names you provide;
+- length of the name.
+
+
